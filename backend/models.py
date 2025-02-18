@@ -58,3 +58,25 @@ service_request_washservice = db.Table(
     db.Column('service_request_id', db.Integer, db.ForeignKey('service_request.id', primary_key = True)),
     db.Column('wash_service_id', db.Integer, db.ForeignKey('wash_service.id', primary_key= True))
 )
+
+
+class Order:
+    id = db.Column(db.Integer, primary_key=True)
+    total_cost = db.Column(db.Float, nullable=False)
+    expenses = db.Column(db.Float, nullable=False)
+    tax = db.Column(db.Float, nullable=False)
+    net_profit = db.Column(db.Float, nullable=False)
+    service_request = db.relationship('ServiceRequest', backref= db.backref('order', useList=False))
+    review = db.relationship('Review', backref= db.backref('order', useList=False))
+
+    def __repr__(self):
+        return f"Order: {self.id} - Net profit= {self.net_profit}"
+    
+class Review(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    datetime = db.Column(db.DateTime, nullable=False)
+    rate = db.Column(db.Integer, nullable=False)
+    message = db.Column(db.String(500), nullable=True)
+
+    def __repr__(self):
+        return f"Rate: {self.rate}, Review: {self.message}"
