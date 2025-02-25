@@ -1,6 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from application import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -76,7 +75,7 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     datetime = db.Column(db.DateTime, nullable=False)
     rate = db.Column(db.Integer, nullable=False)
-    message = db.Column(db.String(500), nullable=True)
+    message = db.Column(db.Text, nullable=True)
 
     def __repr__(self):
         return f"Rate: {self.rate}, Review: {self.message}"
