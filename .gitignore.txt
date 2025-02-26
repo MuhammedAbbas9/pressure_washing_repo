@@ -1,2 +1,6 @@
 
 *.sqlite
+venv/
+__pycache__/
+database/
+migrations/

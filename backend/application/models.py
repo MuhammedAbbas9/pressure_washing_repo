@@ -17,22 +17,25 @@ class User(db.Model):
     def __repr__(self):
         return f"User First name: {self.first_name}, Last name: {self.last_name}"
     
+class Order:
+    id = db.Column(db.Integer, primary_key=True)
+    total_cost = db.Column(db.Float, nullable=False)
+    expenses = db.Column(db.Float, nullable=False)
+    tax = db.Column(db.Float, nullable=False)
+    net_profit = db.Column(db.Float, nullable=False)
+    service_request = db.relationship('ServiceRequest', backref= db.backref('order', useList=False))
+    review = db.relationship('Review', backref= db.backref('order', useList=False))
 
-class Customer(User):
-    id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-    service_requests = db.relationship('ServiceRequest', backref='customer', lazy = True)
+    def __repr__(self):
+        return f"Order: {self.id} - Net profit= {self.net_profit}"
 
-    __mapper_args__ = {
-        'polymorphic_identity' : 'customer'
-    }
+# class Admin(User):
+#     id = db.Column(db.Integer, primary_key=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
-class Admin(User):
-    id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
-    orders = db.relationship('Order', backref='admin', lazy=True)
-
-    __mapper_args__ = {
-        'polymorphic_identity' : 'admin'
-    }
+#     __mapper_args__ = {
+#         'polymorphic_identity' : 'admin'
+#     }
 
 class WashService(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -58,19 +61,14 @@ service_request_washservice = db.Table(
     db.Column('wash_service_id', db.Integer, db.ForeignKey('wash_service.id', primary_key= True))
 )
 
+class Customer(User):
+    id = db.Column(db.Integer, db.ForeignKey('user.id'), primary_key=True)
+    service_requests = db.relationship('ServiceRequest', backref='customer', lazy = 'dynamic')
 
-class Order:
-    id = db.Column(db.Integer, primary_key=True)
-    total_cost = db.Column(db.Float, nullable=False)
-    expenses = db.Column(db.Float, nullable=False)
-    tax = db.Column(db.Float, nullable=False)
-    net_profit = db.Column(db.Float, nullable=False)
-    service_request = db.relationship('ServiceRequest', backref= db.backref('order', useList=False))
-    review = db.relationship('Review', backref= db.backref('order', useList=False))
-
-    def __repr__(self):
-        return f"Order: {self.id} - Net profit= {self.net_profit}"
-    
+    __mapper_args__ = {
+        'polymorphic_identity' : 'customer'
+    }
+ 
 class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     datetime = db.Column(db.DateTime, nullable=False)
@@ -79,3 +77,6 @@ class Review(db.Model):
 
     def __repr__(self):
         return f"Rate: {self.rate}, Review: {self.message}"
+    
+# Admin.orders = db.relationship('Order', backref='admin', lazy=True)
+
