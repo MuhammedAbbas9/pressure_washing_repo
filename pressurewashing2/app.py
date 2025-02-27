@@ -1,7 +1,8 @@
-from urllib import request
+from crypt import methods
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask.sansio.blueprints import Blueprint
+from sqlalchemy import delete
 
 app = Flask(__name__)
 
@@ -43,16 +44,53 @@ if __name__ == "__main__":
 
 
 #user_bp= Blueprint('user_bp',__name__,url_prefix='/users')
+#app.register_blueprint(user_bp)
 @app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World!'
 @app.route('/users', methods=['POST'])
 def add_user():
-    data = request.get_json()
-    new_user = User(name=data['name'], email=data['email'])
+    data = request.get_json(silent=True)
+    new_user = User(name=data['name'], email=data['email'],phone=data['phone'],address=data['address'])
     db.session.add(new_user)
     db.session.commit()
     return jsonify({"message": "User added successfully"}), 201
 
+@app.route('/users',methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return jsonify([{"id":u.id,"name":u.name,"email":u.email,"phone":u.phone,"address":u.address} for u in users])
 
-#app.register_blueprint(user_bp)
+
+@app.route("/users<int:id>", methods=["GET"])
+def get_user(id):
+    user = User.query.get(id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+    return jsonify(user.to_dict()), 200
+@app.route("/users<int:id>",methods=["PUT"])
+def update_user(id):
+    user = User.query.get(id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+
+    data = request.json
+    user.name = data.get("name", user.name)
+    user.email = data.get("email", user.email)
+    user.phone = data.get("phone", user.phone)
+    user.address = data.get("address", user.address)
+
+    db.session.commit()
+    return jsonify({"message": "User updated successfully"}), 200
+
+
+
+@app.route("/users<int:id>",methods=["DELETE"])
+def delete_user(id):
+    user = User.query.get(id)
+    if not user:
+        return jsonify({"error": "User not found"}), 404
+
+    db.session.delete(user)
+    db.session.commit()
+    return jsonify({"message": "User deleted successfully"}), 200
