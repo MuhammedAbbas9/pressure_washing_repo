@@ -1,0 +1,10 @@
+
+*.sqlite
+venv/
+__pycache__/
+database/
+migrations/
+backend/__pycache__/
+application/__pycache__/
+scripts/
+
