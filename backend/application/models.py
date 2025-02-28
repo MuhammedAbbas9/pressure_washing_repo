@@ -37,7 +37,8 @@ class Order:
 #         'polymorphic_identity' : 'admin'
 #     }
 
-class WashService(db.Model):
+class WashServiceModel(db.Model):
+    __tablename__ = 'wash_service'
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(50), nullable=False)
     price = db.Column(db.Float, nullable=False)
@@ -50,7 +51,7 @@ class ServiceRequest(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'), nullable=False)
     datetime = db.Column(db.DateTime, nullable=False)
-    wash_services = db.relationship('WashService', secondary ='service_request_washservice', backref = 'service_requests')
+    wash_services = db.relationship('WashServiceModel', secondary ='service_request_washservice', backref = 'service_requests')
 
     def __repr__(self):
         return f""

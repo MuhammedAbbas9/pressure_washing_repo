@@ -1,0 +1,6 @@
+flask
+flask_sqlalchemy
+flask_restful
+marshmallow
+flask_migrate
+# ...add other libraries as needed...
