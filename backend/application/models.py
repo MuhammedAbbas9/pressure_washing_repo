@@ -57,8 +57,8 @@ class ServiceRequest(db.Model):
     
 service_request_washservice = db.Table(
     'service_request_washservice',
-    db.Column('service_request_id', db.Integer, db.ForeignKey('service_request.id', primary_key = True)),
-    db.Column('wash_service_id', db.Integer, db.ForeignKey('wash_service.id', primary_key= True))
+    db.Column('service_request_id', db.Integer, db.ForeignKey('service_request.id'), primary_key = True),
+    db.Column('wash_service_id', db.Integer, db.ForeignKey('wash_service.id'), primary_key= True)
 )
 
 class Customer(User):
