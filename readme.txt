@@ -1,5 +1,5 @@
 • Project Title:
-Pressure Washing Management System.
+Entretien RJS Management System.
 
 • Description:
 This project involves the development of a web-based system that allows the customers to browse the pressure washing services this small business offers, book and/or get online estimations for their desired services.
