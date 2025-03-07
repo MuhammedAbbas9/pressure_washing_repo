@@ -30,6 +30,62 @@
   --nav-hover-color: #ffffff;
 }
 
+.services {
+  padding: 20px;
+}
+
+.service {
+  display: flex;
+  flex-direction: row; /* Default: content on left, image on right */
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+.service .reverse { /* The .reverse class should be inside .service */
+  flex-direction: row-reverse; /* Flips the order */
+}
+
+.service-content {
+  flex: 1;
+  padding: 10px;
+}
+
+.service-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Placeholder background */
+}
+
+.service-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Adjust as needed */
+}
+
+.description {
+  margin-bottom: 15px;
+}
+
+.choose-service {
+  background-color: #005f41;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Responsive Design (Optional) */
+@media (max-width: 768px) {
+  .service {
+      flex-direction: column; /* Stack vertically on smaller screens */
+  }
+}
+
+
 
 
 /* Fonts */
