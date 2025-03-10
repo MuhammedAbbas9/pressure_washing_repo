@@ -1,4 +1,3 @@
-
 *.sqlite
 venv/
 __pycache__/
@@ -7,4 +6,3 @@ migrations/
 backend/__pycache__/
 application/__pycache__/
 scripts/
-

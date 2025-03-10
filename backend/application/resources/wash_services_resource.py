@@ -7,8 +7,8 @@ wash_service_bp = Blueprint("wash_service_bp", __name__)
 api = Api(wash_service_bp)
 
 class WashServiceResource(Resource):
-    def get(self, id=None):
 
+    def get(self, id=None):
         if id == None:
             # Fetch all wash services if no ID is provided
             wash_service_Result_List = WashServiceService.get_all_wash_services()
