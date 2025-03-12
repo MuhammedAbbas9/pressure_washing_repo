@@ -1,0 +1,38 @@
+[
+    {
+      "title": "Lorem Ipsum",
+      "icon": "bi bi-briefcase",
+      "link": "services-details.html",
+      "delay": 100
+    },
+    {
+      "title": "Dolor Sitema",
+      "icon": "bi bi-card-checklist",
+      "link": "services-details.html",
+      "delay": 200
+    },
+    {
+      "title": "Sed ut perspiciatis",
+      "icon": "bi bi-bar-chart",
+      "link": "services-details.html",
+      "delay": 300
+    },
+    {
+      "title": "Magni Dolores",
+      "icon": "bi bi-binoculars",
+      "link": "services-details.html",
+      "delay": 400
+    },
+    {
+      "title": "Nemo Enim",
+      "icon": "bi bi-brightness-high",
+      "link": "services-details.html",
+      "delay": 500
+    },
+    {
+      "title": "Eiusmod Tempor",
+      "icon": "bi bi-calendar4-week",
+      "link": "services-details.html",
+      "delay": 600
+    }
+  ]
