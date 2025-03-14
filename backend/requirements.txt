@@ -3,4 +3,5 @@ flask_sqlalchemy
 flask_restful
 marshmallow
 flask_migrate
+flask-cors
 # ...add other libraries as needed...
