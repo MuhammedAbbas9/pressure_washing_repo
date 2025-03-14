@@ -5,6 +5,87 @@
 --------------------------------------------------------------*/
 
 /* UPDATED CSS ELEMENTS */
+.hero-contact-button {
+  margin-top: 20px;
+  position: absolute;
+  padding: 15px 20px;
+  background-color: #005f41;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border: 5px solid white;
+  border-radius: 10px; /* Rounded corners */
+  font-weight: bold;
+  transition: background-color 0.3s ease;}
+
+.hero-contact-button:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%)
+}
+
+#portfolio .btn-success{
+  margin-bottom: 50px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+h2{
+  margin-bottom: 50px;
+}
+
+#services .btn-success{
+  margin-top: 100px;
+}
+
+#services .landscaping_icon img{
+  width: 48px;
+  height: auto;
+  margin-left: 8px;
+}
+
+#services .graffiti_icon img{
+  width: 75px;
+  height: auto;
+  margin-left: -15px;
+}
+
+#services .stain_icon img {
+  width: 75px;
+  height: auto;
+  margin-left: -12px;
+
+}
+
+.services .service-item .icon {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  margin-right: 50px;
+  line-height: 0;
+}
+
+.services .service-item .icon i {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  font-size: 56px;
+  transition: ease-in-out 0.3s;
+  z-index: 2;
+  position: relative;
+}
+
+.services .service-item .icon:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  background: color-mix(in srgb, var(--accent-color), transparent 70%);
+  border-radius: 50px;
+  z-index: 1;
+  bottom: -15px;
+  right: -15px;
+  transition: 0.3s;
+}
+
+
 .contact-info svg,
 .contact-info p {
     color: #fff;
@@ -110,17 +191,6 @@
   color: gray; /* Set text color to gray */
   background-color: #043b2a;
 }
-
-.graffiti-icon img {
-  width: 100px;
-  height: auto;
-}
-
-.stain-icon img {
-  width: 10px;
-  height: auto;
-}
-
 
 /* Fonts */
 :root {
@@ -804,7 +874,7 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -1147,34 +1217,6 @@ section,
   border-right: 5px solid var(--background-color);
 }
 
-.services .service-item .icon {
-  width: 48px;
-  height: 48px;
-  position: relative;
-  margin-right: 50px;
-  line-height: 0;
-}
-
-.services .service-item .icon i {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 56px;
-  transition: ease-in-out 0.3s;
-  z-index: 2;
-  position: relative;
-}
-
-.services .service-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 30px;
-  width: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 70%);
-  border-radius: 50px;
-  z-index: 1;
-  bottom: -15px;
-  right: -15px;
-  transition: 0.3s;
-}
 
 .services .service-item .title {
   font-weight: 700;
