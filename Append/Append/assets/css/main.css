@@ -5,6 +5,38 @@
 --------------------------------------------------------------*/
 
 /* UPDATED CSS ELEMENTS */
+
+.portfolio-details-page .header {
+  --background-color: #005f41;
+  --heading-color: #ffffff;
+  --nav-color: rgba(255, 255, 255, 0.5);
+  --nav-hover-color: #ffffff;
+}
+
+.features .features-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features .features-item ul li {
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-start;
+  font-size: 18px; /* Add font size */
+    line-height: 1.5; /* Add line height */
+}
+
+.features .features-item ul li:last-child {
+  padding-bottom: 0;
+}
+
+.features .features-item ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: var(--accent-color);
+}
+
+
 .hero-contact-button {
   margin-top: 20px;
   position: absolute;
@@ -1270,26 +1302,6 @@ section,
   background-color: color-mix(in srgb, var(--accent-color), transparent 10%);
 }
 
-.features .features-item ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features .features-item ul li {
-  padding-bottom: 10px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.features .features-item ul li:last-child {
-  padding-bottom: 0;
-}
-
-.features .features-item ul i {
-  font-size: 20px;
-  padding-right: 4px;
-  color: var(--accent-color);
-}
 
 .features .features-item img {
   border: 6px solid var(--surface-color);
