@@ -1,2 +1,0 @@
-write the extentions of he files like .java blabla
-and folders like /assets/
