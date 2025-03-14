@@ -30,6 +30,18 @@ class WashServiceResource(Resource):
         new_service = WashServiceService.create_wash_service(data)
         return new_service, 201
     
+    def put(self, id):
+        parser = reqparse.RequestParser()
+        parser.add_argument("type", type=str, required=False)
+        parser.add_argument("price", type=float, required=False)
+        parser.add_argument("images_path", type=str, required=False)
+        data = parser.parse_args()
+
+        updated_service = WashServiceService.update_wash_service(id, data)
+        if not updated_service:
+            return {"message": "Service not found or no fields to update"}, 404
+        return updated_service, 200
+    
 
 api.add_resource(WashServiceResource, '/wash_services/<int:id>', '/wash_services')
 # Api.add_resource(WashServiceResource, '/wash_services', '/wash_services')

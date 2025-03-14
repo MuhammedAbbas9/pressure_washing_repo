@@ -26,3 +26,23 @@ class WashServiceService:
         db.session.add(new_service)
         db.session.commit()
         return WashServiceDTO().dump(new_service)  # Serialize single object
+    
+
+    @staticmethod
+    def update_wash_service(id, data):
+        # Fetch the wash service by id
+        wash_service = WashServiceModel.query.get(id)
+        if not wash_service:
+            return None
+
+        # Update the fields if provided
+        if data.get("type"):
+            wash_service.type = data["type"]
+        if data.get("price"):
+            wash_service.price = data["price"]
+        if data.get("images_path"):
+            wash_service.images_path = data["images_path"]
+
+        db.session.commit()
+
+        return WashServiceDTO().dump(wash_service)  # Serialize single object
