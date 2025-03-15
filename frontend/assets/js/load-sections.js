@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sections = {
         servicesList: '../sections/services-list.html',  // Load the "services-list.html" into services-list
         header: '../components/header.html',    // Load the "home.html" into header
-        footer: '../components/footer.html' // Load the "footer.html" into footer
+        footer: '../components/footer.html', // Load the "footer.html" into footer
+        portfolioSec: '../pages/portfolio-details.html', // Load the "portfolio-details.html" into portfolioSec
     };
 
     // Function to load a section

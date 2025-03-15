@@ -20,6 +20,7 @@ class WashServiceService:
         """ Create a new wash service """
         new_service = WashServiceModel(
             type=data["type"],
+            description=data.get("description"),
             price=data["price"],
             images_path=data.get("images_path")
         )
@@ -38,6 +39,8 @@ class WashServiceService:
         # Update the fields if provided
         if data.get("type"):
             wash_service.type = data["type"]
+        if data.get("description"):
+            wash_service.description = data["description"]   
         if data.get("price"):
             wash_service.price = data["price"]
         if data.get("images_path"):

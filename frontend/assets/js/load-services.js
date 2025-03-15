@@ -22,12 +22,16 @@ window.addEventListener('load', async function () {
 
             serviceItem.innerHTML = `
                 <div class="service-item d-flex">
-                    <div class="icon flex-shrink-0"><i class="${service.images_path}"></i></div>
+                    <div class="icon flex-shrink-0"><i class="valid-icon-class"></i></div>
                     <div>
-                        <h4 class="title"><a href="" class="stretched-link">${service.type}</a></h4>
+                        <h4 class="title"><a href="javascript:void(0);" class="stretched-link">${service.type}</a></h4>
                     </div>
                 </div>
             `;
+
+            serviceItem.querySelector('.stretched-link').addEventListener('click', function () {
+                window.location.href = `../pages/services-details.html?id=${service.id}`;
+            });
 
             servicesContainer.appendChild(serviceItem);
         });
