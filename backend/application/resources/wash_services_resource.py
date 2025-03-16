@@ -46,6 +46,5 @@ class WashServiceResource(Resource):
     
 
 api.add_resource(WashServiceResource, '/wash_services/<int:id>', '/wash_services')
-# Api.add_resource(WashServiceResource, '/wash_services', '/wash_services')
 
  
