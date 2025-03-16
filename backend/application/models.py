@@ -17,30 +17,33 @@ class User(db.Model):
     def __repr__(self):
         return f"User First name: {self.first_name}, Last name: {self.last_name}"
     
-class Order:
+class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     total_cost = db.Column(db.Float, nullable=False)
     expenses = db.Column(db.Float, nullable=False)
     tax = db.Column(db.Float, nullable=False)
     net_profit = db.Column(db.Float, nullable=False)
-    service_request = db.relationship('ServiceRequest', backref= db.backref('order', useList=False))
-    review = db.relationship('Review', backref= db.backref('order', useList=False))
+    service_request = db.relationship('ServiceRequest', backref= db.backref('order', uselist=False))
+    review = db.relationship('Review', backref= db.backref('order', uselist=False))
+    admin_id = db.Column(db.Integer, db.ForeignKey('admin.id'), nullable=False)
 
     def __repr__(self):
         return f"Order: {self.id} - Net profit= {self.net_profit}"
 
-# class Admin(User):
-#     id = db.Column(db.Integer, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+class Admin(User):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    orders = db.relationship('Order', backref='admin', lazy=True)
 
-#     __mapper_args__ = {
-#         'polymorphic_identity' : 'admin'
-#     }
+    __mapper_args__ = {
+        'polymorphic_identity' : 'admin'
+    }
 
 class WashServiceModel(db.Model):
     __tablename__ = 'wash_service'
     id = db.Column(db.Integer, primary_key=True)
     type = db.Column(db.String(50), nullable=False)
+    description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
     images_path = db.Column(db.String(200))
 
@@ -52,6 +55,7 @@ class ServiceRequest(db.Model):
     customer_id = db.Column(db.Integer, db.ForeignKey('customer.id'), nullable=False)
     datetime = db.Column(db.DateTime, nullable=False)
     wash_services = db.relationship('WashServiceModel', secondary ='service_request_washservice', backref = 'service_requests')
+    order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable=False)
 
     def __repr__(self):
         return f""
@@ -75,6 +79,8 @@ class Review(db.Model):
     datetime = db.Column(db.DateTime, nullable=False)
     rate = db.Column(db.Integer, nullable=False)
     message = db.Column(db.Text, nullable=True)
+    order_id = db.Column(db.Integer, db.ForeignKey('order.id'), nullable=False)  # Add foreign key to Order
+
 
     def __repr__(self):
         return f"Rate: {self.rate}, Review: {self.message}"
