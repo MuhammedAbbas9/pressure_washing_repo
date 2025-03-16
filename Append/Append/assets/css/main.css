@@ -13,6 +13,13 @@
   --nav-hover-color: #ffffff;
 }
 
+.starter-page-page .header {
+  --background-color: #005f41;
+  --heading-color: #ffffff;
+  --nav-color: rgba(255, 255, 255, 0.5);
+  --nav-hover-color: #ffffff;
+}
+
 .features .features-item ul {
   list-style: none;
   padding: 0;
@@ -222,6 +229,77 @@ h2{
   max-width: 100%;
   color: gray; /* Set text color to gray */
   background-color: #043b2a;
+}
+
+.services-pricing {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.services-pricing-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-pricing-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.services-pricing-header h4 {
+font-weight: bold;
+}
+
+.services-pricing-list {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.service-item {
+  display: grid;
+  grid-template-columns: 30px 1fr 550px 100px;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-item input[type="checkbox"] {
+  margin: 0;
+}
+
+.service-item label {
+  margin: 0;
+}
+
+.service-images {
+  width: 80px;
+  height: 50px;
+  background-color: transparent;
+}
+
+.service-price {
+  text-align: right;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.show-more-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #005f41;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 90px;
 }
 
 /* Fonts */
@@ -2809,13 +2887,6 @@ section,
 .comment-form form .btn-primary:hover {
   color: var(--contrast-color);
   background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
 
 /*--------------------------------------------------------------
