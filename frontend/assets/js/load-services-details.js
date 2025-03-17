@@ -24,9 +24,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="service-content">
                         <h2>${service.type}</h2>
                         <p>${service.description}</p>
-                        <button class="choose-service">Choose this service</button>
+                        <a href="starter-page.html">
+                            <button class="choose-service">Choose this service</button>
+                        </a>                    
                     </div>
-
                 `;
 
                 servicesContainer.appendChild(serviceItem);
@@ -40,7 +41,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <div class="service-content">
                         <h2>${service.type}</h2>
                         <p>${service.description}</p>
-                        <button class="choose-service">Choose this service</button>
+                        <a href="starter-page.html">
+                            <button class="choose-service">Choose this service</button>
+                        </a>
                     </div>
                     <div class="service-image">
                         <img src="${service.images_path}" alt="${service.type}">

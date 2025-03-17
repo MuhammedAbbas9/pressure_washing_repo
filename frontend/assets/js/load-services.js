@@ -9,7 +9,7 @@ window.addEventListener('load', async function () {
 
     try {
         const response = await fetch('/wash_services');
-        if (!response.ok) throw new Error('Failed to load services.json');
+        if (!response.ok) throw new Error('Failed to load services');
 
         const services = await response.json();
         services.forEach(service => {
@@ -30,7 +30,7 @@ window.addEventListener('load', async function () {
             `;
 
             serviceItem.querySelector('.stretched-link').addEventListener('click', function () {
-                window.location.href = `../pages/services-details.html?id=${service.id}`;
+                window.location.href = `./pages/services-details.html?id=${service.id}`;
             });
 
             servicesContainer.appendChild(serviceItem);
