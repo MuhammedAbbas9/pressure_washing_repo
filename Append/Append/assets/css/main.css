@@ -6,6 +6,21 @@
 
 /* UPDATED CSS ELEMENTS */
 
+.services-pricing-list .service-images img[alt="graffiti_icon"],
+.services-pricing-list .service-images img[alt="stain_icon"] {
+    width: 75px;
+    height: auto;
+    top: -10px; /* Adjust the value to move up */
+    left: -15px; 
+    position: relative;
+
+}
+
+.services-pricing-list .service-images img {
+  width: 50px;
+  height: auto;
+}
+
 .portfolio-details-page .header {
   --background-color: #005f41;
   --heading-color: #ffffff;
