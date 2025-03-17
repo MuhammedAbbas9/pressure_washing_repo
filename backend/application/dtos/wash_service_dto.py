@@ -7,4 +7,5 @@ class WashServiceDTO(Schema):
     price = fields.Float(required = True)
     description = fields.Str(allow_none= True) # Optional field
     images_path = fields.Str(allow_none= True) # Optional field
+    icon_path = fields.Str(allow_none= True) # Optional field
 

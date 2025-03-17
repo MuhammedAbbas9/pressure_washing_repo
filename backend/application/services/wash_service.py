@@ -22,7 +22,8 @@ class WashServiceService:
             type=data["type"],
             description=data.get("description"),
             price=data["price"],
-            images_path=data.get("images_path")
+            images_path=data.get("images_path"),
+            icon_path=data.get("icon_path")
         )
         db.session.add(new_service)
         db.session.commit()
@@ -45,6 +46,8 @@ class WashServiceService:
             wash_service.price = data["price"]
         if data.get("images_path"):
             wash_service.images_path = data["images_path"]
+        if data.get("icon_path"):
+            wash_service.icon_path = data["icon_path"]
 
         db.session.commit()
 

@@ -26,6 +26,7 @@ class WashServiceResource(Resource):
         parser.add_argument("description", type=str, required=False)
         parser.add_argument("price", type=float, required=True, help="Price is required")
         parser.add_argument("images_path", type=str, required=False)
+        parser.add_argument("icon_path", type=str, required=False)
         data = parser.parse_args()
 
         new_service = WashServiceService.create_wash_service(data)
@@ -37,6 +38,7 @@ class WashServiceResource(Resource):
         parser.add_argument("description", type=str, required=False)
         parser.add_argument("price", type=float, required=False)
         parser.add_argument("images_path", type=str, required=False)
+        parser.add_argument("icon_path", type=str, required=False)
         data = parser.parse_args()
 
         updated_service = WashServiceService.update_wash_service(id, data)

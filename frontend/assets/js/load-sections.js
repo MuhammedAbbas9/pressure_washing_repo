@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         footer: '../components/footer.html', // Load the "footer.html" into footer
         portfolio: '../sections/portfolio.html', // Load the "portfolio.html" into portfolio
         callToAction: '../sections/call-to-action.html', // Load the "call-to-action.html" into call-to-action
-        breadcrumb: '../components/breadcrumb.html', // Load the "breadcrumb.html" into breadcrumb
+        breadcrumb1: '../components/breadcrumb.html', // Load the "breadcrumb.html" into breadcrumb
     };
 
     // Function to load a section

@@ -1,3 +1,4 @@
+// if (!localStorage.getItem("listenerLoaded")) {
 window.addEventListener('load', async function () {
     const servicesContainer = document.getElementById('servicesContainer');
     console.log("servicesContainer value: " + servicesContainer);
@@ -8,7 +9,11 @@ window.addEventListener('load', async function () {
     }
 
     try {
-        const response = await fetch('/wash_services');
+        const response = await $.ajax({
+            url: '/wash_services',
+            method: 'GET',
+            dataType: 'json'
+        });
         if (!response.ok) throw new Error('Failed to load services');
 
         const services = await response.json();
@@ -22,7 +27,7 @@ window.addEventListener('load', async function () {
 
             serviceItem.innerHTML = `
                 <div class="service-item d-flex">
-                    <div class="icon flex-shrink-0"><i class="valid-icon-class"></i></div>
+                    <div class="icon flex-shrink-0 graffiti_icon"><img src=${service.icon_path} alt="pw_icon"></div>
                     <div>
                         <h4 class="title"><a href="javascript:void(0);" class="stretched-link">${service.type}</a></h4>
                     </div>
@@ -35,9 +40,14 @@ window.addEventListener('load', async function () {
 
             servicesContainer.appendChild(serviceItem);
         });
+
+        servicesContainer.insertAdjacentHTML('beforeend', '<a href="../pages/services-details.html" class="btn btn-success">Check out all of our services!</a>');
     }
     catch (error) {
         console.error('Error loading services:', error);
     }
 
 });
+
+//     localStorage.setItem("listenerLoaded", true);
+// }

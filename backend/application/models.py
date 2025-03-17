@@ -46,6 +46,7 @@ class WashServiceModel(db.Model):
     description = db.Column(db.Text, nullable=True)
     price = db.Column(db.Float, nullable=False)
     images_path = db.Column(db.String(200))
+    icon_path = db.Column(db.String(200))
 
     def __repr__(self):
         return f"Wash Service: {self.type} - price: ${self.price}"
