@@ -9,7 +9,7 @@ window.addEventListener('load', async function () {
     }
 
     try {
-        const response = await fetch('https://services.entretienrjs.ca//wash_services');
+        const response = await fetch('http://services.entretienrjs.ca:8001/wash_services');
         if (!response.ok) throw new Error('Failed to load services');
 
         const services = await response.json();
