@@ -9,7 +9,7 @@ app.config['SECRET_KEY'] = 'mysecret'
 
 # Database setup
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'wash-services-db.sqlite')  # Use SQLite for simplicity
+app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///' + os.path.join(basedir, 'wash-services-db.sqlite')"  # Use SQLite for simplicity
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy()

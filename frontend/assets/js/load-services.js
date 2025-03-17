@@ -9,11 +9,7 @@ window.addEventListener('load', async function () {
     }
 
     try {
-        const response = await $.ajax({
-            url: '/wash_services',
-            method: 'GET',
-            dataType: 'json'
-        });
+        const response = await fetch('/wash_services');
         if (!response.ok) throw new Error('Failed to load services');
 
         const services = await response.json();
