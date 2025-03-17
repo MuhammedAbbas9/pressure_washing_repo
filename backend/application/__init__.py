@@ -3,7 +3,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
-app = Flask(__name__, static_folder='../../frontend', static_url_path='https://services.entretienrjs.ca/')
+app = Flask(__name__, static_folder='../../frontend', static_url_path='/')
 
 app.config['SECRET_KEY'] = 'mysecret'
 
