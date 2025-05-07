@@ -6,6 +6,29 @@
 
 /* UPDATED CSS ELEMENTS */
 
+.lang-buttons {
+  display: flex;
+  gap: 5px;
+  margin: 0 16px;
+}
+
+.lang-buttons button {
+  background-color: #eee;
+  border: none;
+  padding: 1px 4px;
+  margin-right: 6px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #333;
+  transition: background-color 0.3s;
+}
+
+.lang-buttons button:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 .services-pricing-list .service-images img[alt="graffiti_icon"],
 .services-pricing-list .service-images img[alt="stain_icon"] {
     width: 75px;

@@ -37,7 +37,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                     <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
                 </svg>
-                <p class="mb-0 ms-2">Montreal | Laval | North-Shore</p>
+                <p id="location" class="mb-0 ms-2">Montreal | Laval | North-Shore</p>
             </div>
             <div class="phone d-flex align-items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-telephone-fill" viewBox="0 0 16 16">
@@ -51,40 +51,41 @@
         </a>
         <div class="d-flex flex-column align-items-end">
             
-
+  
           <div style="display: flex; align-items: center;">
-                        
+  
             <!-- NAVMENU ELEMENTS -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="index.html#hero" class="active">Home</a></li>
-                    <li><a href="portfolio-details.html">Our Work</a></li>
-                    <li class="dropdown"><a href="services-details.html"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                    <li><a id="home" href="index.html#hero" class="active">Home</a></li>
+                    <li><a id="our_work" href="portfolio-details.html">Our Work</a></li>
+                    <li class="dropdown"><a id="services" href="services-details.html"><span>Our Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>
-                            <li><a href="#">All Services</a></li>
-                            <li class="dropdown"><a href="#"><span>General Pressure Washing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <li><a id="all_services" href="#">All Services</a></li>
+                            <li class="dropdown"><a id="general_washing" href="#"><span>General Pressure Washing</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                 <ul>
-                                    <li><a href="#">Driveway Cleaning</a></li>
-                                    <li><a href="#">Pavement Cleaning</a></li>
-                                    <li><a href="#">Roof Cleaning</a></li>
-                                    <li><a href="#">Exterior Wall Cleaning</a></li>
-                                    <li><a href="#">Exterior Stairs Cleaning</a></li>
-                                    <li><a href="#">Deck Cleaning</a></li>
-                                    <li><a href="#">Balcony Cleaning</a></li>
-                                    <li><a href="#">Graffiti Cleaning</a></li>
-                                    <li><a href="#">Gutter Cleaning</a></li>
+                                    <li><a id="driveway" href="#">Driveway Cleaning</a></li>
+                                    <li><a id="pavement" href="#">Pavement Cleaning</a></li>
+                                    <li><a id="roof" href="#">Roof Cleaning</a></li>
+                                    <li><a id="walls" href="#">Exterior Wall Cleaning</a></li>
+                                    <li><a id="stairs" href="#">Exterior Stairs Cleaning</a></li>
+                                    <li><a id="deck" href="#">Deck Cleaning</a></li>
+                                    <li><a id="balcony" href="#">Balcony Cleaning</a></li>
+                                    <li><a id="graffiti" href="#">Graffiti Cleaning</a></li>
+                                    <li><a id="gutters" href="#">Gutter Cleaning</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Truck Cleaning</a></li>
-                            <li><a href="#">Gutter Installation</a></li>
-                            <li><a href="#">Polymer Sand Installation</a></li>
-                            <li><a href="#">Sealant Installation</a></li>
-                            <li><a href="#">Anti-stain Treatment</a></li>
-                            <li><a href="#">Paint stripping</a></li>
-                            <li class="dropdown"><a href="#"><span>Landscaping</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <li><a id="trucks" href="#">Truck Cleaning</a></li>
+                            <li><a id="gutter_installation" href="#">Gutter Installation</a></li>
+                            <li><a id="polymer" href="#">Polymer Sand Installation</a></li>
+                            <li><a id="sealant" href="#">Sealant Installation</a></li>
+                            <li><a id="stain" href="#">Anti-stain Treatment</a></li>
+                            <li><a id="paint" href="#">Paint stripping</a></li>
+                            <li class="dropdown"><a id="landscape" href="#"><span>Landscaping</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                                 <ul>
-                                    <li><a href="#">Lawn Mowing</a></li>
-                                    <li><a href="#">Hedge Trimming</a></li>
+                                    <li><a id="lawn" href="#">Lawn Mowing</a></li>
+                                    <li><a id="hedge" href="#">Hedge Trimming</a></li>
+                                    <li><a id="branch" href="#">Branch Cutting</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -93,8 +94,12 @@
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
                 
-            <!-- EN/FR BUTTON -->
-            <a class="btn-lang" href="#">EN | FR</a>
+            <!-- EN/FR BUTTONS -->
+            <div class="lang-buttons">
+              <button onclick="loadLanguage('en')">EN</button>
+              <button onclick="loadLanguage('fr')">FR</button>
+            </div>          
+  
   
             <!-- ADMIN LOGIN ICON -->
   <a class="admin-login" href="#">
@@ -106,11 +111,11 @@
   </div>
             <!-- FREE ESTIMATOIN BUTTON -->
             <div class="d-flex align-items-center">
-              <a class="btn-getstarted mb-2" href="starter-page.html">Get A Free Estimation</a>
+              <a id="estimation" class="btn-getstarted mb-2" href="starter-page.html">Get A Free Estimation</a>
   </div>
     </div>
       </div>
-</header>
+  </header>
 
   <main class="main">
 
@@ -136,8 +141,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Our Work</h2>
-        <p>Before & After Gallery</p>
+        <h2 class="translate" data-key="our_work">Our Work</h2>
+        <p id="before_after">Before & After Gallery</p>
       </div><!-- End Section Title -->
 
       <div class="container">
@@ -145,10 +150,10 @@
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Pressure Washing</li>
-            <li data-filter=".filter-product">Gutter Cleaning</li>
-            <li data-filter=".filter-branding">Truck Cleaning</li>
+            <li id="all" data-filter="*" class="filter-active">All</li>
+            <li class="translate" data-key="general_washing" data-filter=".filter-app">Pressure Washing</li>
+            <li class="translate" data-key="gutter_installation" data-filter=".filter-product">Gutter Cleaning</li>
+            <li class="translate" data-key="trucks" data-filter=".filter-branding">Truck Cleaning</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -156,9 +161,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/3b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/3b-a.jpg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -166,9 +169,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/4b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/4b-a.jpg" title="" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -176,9 +177,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/7b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/7b-a.jpg" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -186,9 +185,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/1b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/1b-a.jpg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -196,9 +193,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
               <img src="assets/img/6b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/6b-a.jpg" title="" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -206,9 +201,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <img src="assets/img/2b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/2b-a.jpg" title="" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -216,9 +209,7 @@
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <img src="assets/img/5b-a.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                <a href="assets/img/5b-a.jpg" title="" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
                 <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
               </div>
             </div><!-- End Portfolio Item -->
@@ -243,7 +234,7 @@
             <a href="index.html" class="logo d-flex">
                 <img src="assets/img/White on Transparent without text.png" alt="LOGO" style="max-height: 100px; margin-left: -210px;">
             </a>
-            <p>Dirt's worst nightmare.</p>We bring the pressure, you enjoy the shine.</p>
+            <p id="slogan">Dirt's worst nightmare.</p><p id="slogan2">We bring the pressure, you enjoy the shine.</p>
             <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
@@ -251,7 +242,7 @@
         </div>
     
         <div class="col-lg-2 col-6 footer-links">
-            <h4>Service Zones</h4>
+            <h4 class="translate" data-key="services_areas">Service Zones</h4>
             <ul>
             <li><a href="#">Montreal</a></li>
             <li><a href="#">Rive-Nord</a></li>
@@ -265,15 +256,15 @@
         </div>
     
         <div class="col-lg-2 col-6 footer-links">
-            <h4>Opening Hours</h4>
+            <h4 id="opening_hours">Opening Hours</h4>
             <ul>
-            <li><a href="#">Monday - Friday</a></li>
+            <li><a id="days" href="#">Monday - Friday</a></li>
             <li><a href="#">8h00 - 20h00</a></li>
             </ul>
         </div>
     
         <div class="col-lg-2 col-6 footer-links">
-            <h4>Contact Us</h4>
+            <h4 id="contact">Contact Us</h4>
             <ul>
             <li><a href="#">+1 (514) 553-4033</a></li>
             <li><a href="#">rjs.entreprise@gmail.com</a></li>
@@ -309,6 +300,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/language.js"></script>
 
 </body>
 
